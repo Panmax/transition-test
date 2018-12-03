@@ -27,6 +27,7 @@
         $img.width(width);
         console.log(`实际高度是：${height}`);
         console.log(`最新offsetHeight: ${ $img[0].offsetHeight}`);
+        setTimeout("console.log(`50毫秒后offsetHeight: ${ $(\"img\")[0].offsetHeight}`)", 50);
 
         $("input").click(function () {
 
