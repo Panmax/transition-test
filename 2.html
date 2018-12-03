@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>Page Title</title>
+    <script src="https://cdn.bootcss.com/jquery/1.12.4/jquery.min.js"></script>
+
+    <style>
+
+        .container {
+            display: flex;
+        }
+
+        .container2 {
+            flex: 0.3;
+        }
+
+        .page {
+            /*position: absolute;*/
+            /*top: 0;*/
+            /*bottom: 0;*/
+            /*left: 0;*/
+            /*right: 0;*/
+        }
+
+        .css-image {
+            width: 100%;
+            height: 100%;
+            transition: all 0.5s;
+            opacity: 1;
+        }
+    </style>
+
+    <script type="text/javascript">
+      $(document).ready(function () {
+
+        var $img = $("img");
+        var height = $img[0].offsetHeight;
+        console.log(`初始高度是：${height}`);
+
+        height += 100;
+        $img.height(height);
+        console.log(`最新实际高度是：${height}`);
+        console.log(`最新offsetHeight: ${ $img[0].offsetHeight}`);
+
+        $("input").click(function () {
+
+          height += 100;
+          $img.height(height);
+          console.log(`变大后的实际高度是：${height}`);
+          console.log(`变大后offsetHeight: ${ $img[0].offsetHeight}`);
+        });
+
+      });
+    </script>
+</head>
+<body>
+
+<div class="container">
+    <div class="container2">
+        <div class="page">
+            <img class="css-image" src="./kill.png">
+        </div>
+    </div>
+</div>
+<input type="button" value="button">
+</body>
+</html>

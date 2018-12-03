@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>Page Title</title>
+    <script src="https://cdn.bootcss.com/jquery/1.12.4/jquery.min.js"></script>
+
+    <style>
+
+        .css-image {
+            width: 0px;
+            height: 0px;
+            transition: all 0.5s;
+            opacity: 1;
+        }
+    </style>
+
+    <script type="text/javascript">
+      $(document).ready(function () {
+
+        var $img = $("img");
+        var height = $img.height();
+        var width = $img.width();
+        height += 100;
+        width += 100;
+        $img.height(height);
+        $img.width(width);
+        console.log(`实际高度是：${height}`);
+        console.log(`最新offsetHeight: ${ $img[0].offsetHeight}`);
+
+        $("input").click(function () {
+
+          height += 100;
+          width += 100;
+          $img.height(height);
+          $img.width(width);
+          console.log(`变大后的高度是：${height}`);
+          console.log(`变大后offsetHeight: ${ $img[0].offsetHeight}`);
+        });
+
+      });
+    </script>
+</head>
+<body>
+
+<img class="css-image" src="./kill.png">
+<input type="button" value="button">
+</body>
+</html>
